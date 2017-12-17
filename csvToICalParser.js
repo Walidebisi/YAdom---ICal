@@ -15,6 +15,8 @@ class csvToICalParser {
         this._planningJson = {};
         this.type = type;
         this.typePersonne = type;
+        this.typeInter = "";
+        this.typePersonneInter = "";
     }
 
     get planningJson() {
@@ -129,8 +131,12 @@ class csvToICalParser {
 
         if (this.type === 'i') {
             this.typePersonne = "Intervenant";
+            this.typeInter = 'b';
+            this.typePersonneInter = "_beneficiaire";
         } else {
             this.typePersonne = "Bénéficiaire";
+            this.typeInter = 'i';
+            this.typePersonneInter = "_intervenant";
         }
         let typePlanning = "type";
         this._planningJson[typePlanning] = this.type;

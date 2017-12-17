@@ -59,7 +59,6 @@ class Planning {
     }
 
     addIntervention(intervention) {
-        console.log(this._interventionsList);
         this._interventionsList.push(intervention);
     }
 

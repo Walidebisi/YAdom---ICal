@@ -59,6 +59,27 @@ class PlanningList {
         })
 
     }
+/*
+Pour chaque intervention du planning ajouté creer une nouvelle inter puis cherche le nom du benef
+dans l'autre liste de planning le créer si il existe pas  et ajoute l'inter dans son planning
+Pour chaque planning, check la liste d'intervention si tu trouves le nom de l'autre
+Pour chaque intervention où tu trouve le nom
+ */
+    addInterventions(nom){
+        this.list.forEach(function(plan){
+            let indices = [];
+            let indexes = plan._interventionsList.indexOf(nom);
+            while (indexes != -1){
+                indices.push(indexes);
+                indexes = plan._interventionsList.indexOf(nom, indexes + 1);
+            }
+            for (let i = 0; i < indices.length; i++){
+                plan._interventionsList.push();
+            }
+        })
+
+    }
+
     clearList(){
         let brackets = [];
         fs.writeFileSync(this.fileName, brackets, function (err) {
