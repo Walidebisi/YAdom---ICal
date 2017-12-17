@@ -1,0 +1,7 @@
+{
+  "name": "walid",
+  "version": "0.0.1",
+  "dependencies": {
+    "fs-es6": "latest"
+  }
+}
